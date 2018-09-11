@@ -13,7 +13,6 @@ import promise from "./promise";
 import array from "./array";
 import whitelist from "./whitelist";
 // import startApp from '../config/navigators'
-console.log("hjghghjghjy");
 export default function setup() {
   const isDev = global.isDebuggingInChrome || __DEV__; // eslint-disable-line
 
