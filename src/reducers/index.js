@@ -1,7 +1,4 @@
-import app from './app/reducer';
-import counter from './counter/reducer';
+import app from "./app/reducer";
+import counter from "./counter/reducer";
 
-export {
-  app,
-  counter
-};
+export { app, counter };

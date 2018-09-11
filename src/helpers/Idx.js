@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -57,34 +58,34 @@
  * not currently exist in JavaScript.
  */
 function idx<Ti, Tv>(input: Ti, accessor: (input: Ti) => Tv): ?Tv {
-    try {
-        return accessor(input);
-    } catch (error) {
-        if (error instanceof TypeError) {
-            if (isNullPropertyAccessError(error)) {
-                return null;
-            } else if (isUndefinedPropertyAccessError(error)) {
-                return undefined;
-            }
-        }
-        throw error;
+  try {
+    return accessor(input);
+  } catch (error) {
+    if (error instanceof TypeError) {
+      if (isNullPropertyAccessError(error)) {
+        return null;
+      } else if (isUndefinedPropertyAccessError(error)) {
+        return undefined;
+      }
     }
+    throw error;
+  }
 }
 
 let nullPattern: ?RegExp;
 function isNullPropertyAccessError({ message }: TypeError): boolean {
-    if (!nullPattern) {
-        nullPattern = getInvalidPropertyAccessErrorPattern(null);
-    }
-    return nullPattern.test(message);
+  if (!nullPattern) {
+    nullPattern = getInvalidPropertyAccessErrorPattern(null);
+  }
+  return nullPattern.test(message);
 }
 
 let undefinedPattern: ?RegExp;
 function isUndefinedPropertyAccessError({ message }: TypeError): boolean {
-    if (!undefinedPattern) {
-        undefinedPattern = getInvalidPropertyAccessErrorPattern(undefined);
-    }
-    return undefinedPattern.test(message);
+  if (!undefinedPattern) {
+    undefinedPattern = getInvalidPropertyAccessErrorPattern(undefined);
+  }
+  return undefinedPattern.test(message);
 }
 
 /**
@@ -92,8 +93,8 @@ function isUndefinedPropertyAccessError({ message }: TypeError): boolean {
  */
 // eslint-disable-next-line no-new-func, flowtype/no-weak-types
 const getInvalidPropertyAccessErrorPattern: any = new Function(
-    "$object$",
-    `
+  "$object$",
+  `
   try {
     $object$.$property$;
   } catch (error) {

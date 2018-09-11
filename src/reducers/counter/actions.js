@@ -1,9 +1,9 @@
-import * as types from './actionTypes';
+import * as types from "./actionTypes";
 
 export function increment() {
-  return {type: types.INCREMENT};
+  return { type: types.INCREMENT };
 }
 
 export function decrement() {
-  return {type: types.DECREMENT};
+  return { type: types.DECREMENT };
 }

@@ -1,5 +1,5 @@
-import * as types from './actionTypes';
-import Immutable from 'seamless-immutable';
+import * as types from "./actionTypes";
+import Immutable from "seamless-immutable";
 
 const initialState = Immutable({
   count: 0

@@ -5,8 +5,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Alert,
-  Button,
   StyleSheet
   // StatusBar
 } from "react-native";
@@ -38,10 +36,7 @@ class LoginForm extends Component {
           placeholderTextColor="rgba(225,225,225,0.7)"
           secureTextEntry
         />
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={this.onButtonPress}
-        >
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.onButtonPress}>
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
       </View>

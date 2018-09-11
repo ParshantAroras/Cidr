@@ -1,17 +1,29 @@
 module.exports = {
-    "extends": "eslint:recommended",
-    "rules": {
-        // enable additional rules
-        "indent": ["error", 4],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-
-        // override default options for rules from base configurations
-        "comma-dangle": ["error", "always"],
-        "no-cond-assign": ["error", "always"],
-
-        // disable rules from base configurations
-        "no-console": "off",
-    }
-}
+  env: {
+    browser: true,
+    es6: true
+  },
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  plugins: ["react"],
+  parser: "babel-eslint",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2018,
+    sourceType: "module"
+  },
+  plugins: ["react"],
+  env: {
+    browser: true,
+    amd: true,
+    node: true
+  },
+  rules: {
+    indent: ["off", 2],
+    "linebreak-style": ["error", "unix"],
+    "react/prop-types": 0,
+    quotes: ["warn", "double"],
+    semi: ["error", "always"]
+  }
+};

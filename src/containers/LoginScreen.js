@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import {
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Image
-} from "react-native";
+// import PropTypes from "prop-types";
+import { View, StyleSheet, KeyboardAvoidingView, Image } from "react-native";
 import { connect } from "react-redux";
 import * as counterActions from "../reducers/counter/actions";
 import * as appActions from "../reducers/app/actions";
-import Constants from '../constants';
+import Constants from "../constants";
 import LoginForm from "./../components/LoginForm";
 
 // this is a traditional React component connected to the redux store
@@ -25,11 +17,7 @@ class LoginScreen extends Component {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.loginContainer}>
-          <Image
-            resizeMode="contain"
-            style={styles.logo}
-            source={Constants.Images.login.logo}
-          />
+          <Image resizeMode="contain" style={styles.logo} source={Constants.Images.login.logo} />
         </View>
         <View style={styles.formContainer}>
           <LoginForm onLoginPress={this.onLoginPress} />

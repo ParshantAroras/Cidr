@@ -1,36 +1,36 @@
-import * as types from './actionTypes';
+import * as types from "./actionTypes";
 
 export function appInitialized() {
-  return async function(dispatch, getState) {
+  //return async function(dispatch, getState) {
+  return async function(dispatch) {
     // since all business logic should be inside redux actions
     // this is a good place to put your app initialization code
-    dispatch(changeAppRoot('MainScreen'));
+    dispatch(changeAppRoot("MainScreen"));
   };
 }
 
 export function changeAppRoot(root) {
-  return {type: types.ROOT_CHANGED, root: root};
+  return { type: types.ROOT_CHANGED, root: root };
 }
 
 export function login() {
-  return async function(dispatch, getState) {
+  return async function(dispatch) {
     // login logic would go here, and when it's done, we switch app roots
-    dispatch(changeAppRoot('login'));
+    dispatch(changeAppRoot("login"));
   };
 }
 
 export function movedashBoardTab() {
-  return async function(dispatch, getState) {
+  return async function(dispatch) {
     // login logic would go here, and when it's done, we switch app roots
-    console.log('movedashBoardTab',)
-    dispatch(changeAppRoot('after-login'));
+    dispatch(changeAppRoot("after-login"));
   };
 }
 
 /*
 Move to specified screen
 */
-export const moveToScreen = (root)=> ({
-         type : types.ROOT_CHANGED , root
-})
-
+export const moveToScreen = root => ({
+  type: types.ROOT_CHANGED,
+  root
+});
