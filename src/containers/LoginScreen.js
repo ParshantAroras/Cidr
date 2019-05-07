@@ -31,7 +31,9 @@ class LoginScreen extends Component {
   };
 
   onLoginPress = () => {
-    this.props.dispatch(appActions.movedashBoardTab());
+console.log(appActions)
+    // this.props.dispatch(appActions.movedashBoardTab());
+  // this.props.dispatch(appActions.registeration());
   };
 
   onShowModalPress() {
